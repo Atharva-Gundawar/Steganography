@@ -189,7 +189,7 @@ python-xlib==0.23
 python3-xlib==0.15
 PyTweening==1.0.3
 pytz==2019.3
-pyxdg==0.25
+pyxdg==0.26
 PyYAML==5.1.2
 pyzmq==19.0.0
 qiskit==0.19.1
