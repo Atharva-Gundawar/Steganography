@@ -1,15 +1,26 @@
 from flask import *
+#from flask_sqlalchemy import SQLAlchemy
 
 app=Flask(__name__)
 
+'''app.config['SQLAlchemy_DATABASE_URI'] = 'sqlite:///data.db'
+db = SQLAlchemy(app)
 
+class encode(db.Model):
+    id = db.Column(db.Integer, primary_key = True)
+    key = db.Column(db.String(20), nullable = False)
+    #message = db.Column(db.String(100), nullable = False)
+    ## Above is to store the users messages ... not recommended
+
+'''
 @app.route("/")
 def start():
     return render_template("Start.html")
 
-@app.route("/encode",methods=["POST"])
+@app.route("/encode",methods=["GET","POST"])
 def upload():
     return render_template("encode.html")
+    
 
 @app.route("/encodesuccess",methods=["POST"])
 def success():
@@ -23,6 +34,8 @@ def success():
     f.save(success.file_name)
     #return render_template("success.html",start=success.start_page,end=success.end_page,name=success.file_name)
     return render_template("Start.html")
+
+
 
 if __name__ == "__main__" :
     app.run(debug=True)
