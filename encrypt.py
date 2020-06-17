@@ -20,7 +20,10 @@ def start():
 @app.route("/encode",methods=["GET","POST"])
 def upload():
     return render_template("encode.html")
-    
+    if request.method == 'POST':
+        text=request.form['text']
+        key=request.form['key']
+         
 
 @app.route("/encodesuccess",methods=["POST"])
 def success():
