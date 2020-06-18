@@ -81,7 +81,8 @@ def encode(imagename,text, passkey,newimgname):
 	
 	new_img_name = newimgname 
 	new_img_name=str(new_img_name.split(".")[0])+".png"
-	newimg.save(new_img_name, "png") 
+	newimg.save(new_img_name, "png")
+	image.close() 
 
 def decode(imagename,passkey): 
 	img = imagename 
